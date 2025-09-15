@@ -1,0 +1,6 @@
+services:
+  mastobackup:
+    image: code.kevinisageek.org/kevin/mastobackup:latest
+    volumes:
+      - /volume1/backups:/backups
+    env_file: .env
