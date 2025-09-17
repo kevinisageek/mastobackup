@@ -15,6 +15,6 @@ RUN mkdir /backups
 COPY entrypoint.sh entrypoint.sh
 
 # Set cronjob to run at midnight
-RUN echo '@daily ssh kevin@100.101.155.97  docker exec -t mastodon-db pg_dumpall -c -U postgres > /backups/mastodon-db-$(date +%Y-%m-%d).sql' > /etc/crontabs/root
+RUN echo '@daily ssh -o StrictHostKeyChecking accept-new kevin@100.101.155.97 docker exec -t mastodon-db pg_dumpall -c -U postgres > /backups/mastodon-db-$(date +%Y-%m-%d).sql' > /etc/crontabs/root
 
 CMD ["/entrypoint.sh"]
