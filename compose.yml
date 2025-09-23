@@ -5,6 +5,7 @@ services:
       - mastobackup-data:/backups
       - mastobackup-state:/var/lib/tailscale
     env_file: .env
+    restart: unless-stopped
 
 volumes:
   mastobackup-state:
