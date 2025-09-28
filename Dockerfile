@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM docker.io/library/alpine:3.22
 
 # Install packages without cache to save space
 RUN apk add --no-cache openssh-client nginx ca-certificates iptables ip6tables 
