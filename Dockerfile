@@ -1,7 +1,7 @@
 FROM docker.io/library/alpine:3.22
 
 # Install packages without cache to save space
-RUN apk add --no-cache openssh-client nginx ca-certificates iptables ip6tables 
+RUN apk add --no-cache openssh-client
 
 # Copy Tailscale binaries from the tailscale image on Docker Hub.
 COPY --from=docker.io/tailscale/tailscale:stable /usr/local/bin/tailscaled /app/tailscaled
