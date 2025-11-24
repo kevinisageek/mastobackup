@@ -1,5 +1,8 @@
 FROM docker.io/library/alpine:3.22
 
+ARG BUILD_DATE
+ARG VERSION
+
 LABEL org.opencontainers.image.title="mastobackup" \
     org.opencontainers.image.description="Simple utility container to facilitate backing up my Mastodon database to my NAS" \
     org.opencontainers.image.version="${VERSION}" \
