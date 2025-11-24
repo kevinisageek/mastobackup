@@ -4,12 +4,12 @@ ARG BUILD_DATE
 ARG VERSION
 
 LABEL org.opencontainers.image.title="mastobackup" \
-    org.opencontainers.image.description="Simple utility container to facilitate backing up my Mastodon database to my NAS" \
-    org.opencontainers.image.version="${VERSION}" \
-    org.opencontainers.image.created="${BUILD_DATE}" \
-    org.opencontainers.image.authors="kevinisageek" \
-    org.opencontainers.image.licenses="WTFPL" \
-    maintainer="kevinisageek"
+      org.opencontainers.image.description="Simple utility container to facilitate backing up my Mastodon database to my NAS" \
+      org.opencontainers.image.version="${VERSION}" \
+      org.opencontainers.image.created="${BUILD_DATE}" \
+      org.opencontainers.image.authors="kevinisageek" \
+      org.opencontainers.image.licenses="WTFPL" \
+      maintainer="kevinisageek"
 
 # Create directories needed for database dump and tailscale state
 RUN mkdir -p /backups /var/run/tailscale /var/cache/tailscale /var/lib/tailscale
