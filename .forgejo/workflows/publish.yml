@@ -4,7 +4,7 @@ on:
 
 jobs:
   build:
-    runs-on: docker
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout the repo
         uses: actions/checkout@v4
