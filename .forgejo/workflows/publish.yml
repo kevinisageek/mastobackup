@@ -21,5 +21,4 @@ jobs:
         with:
           push: true
           tags: code.kevinisageek.org/kevin/mastobackup:latest
-          context: mastobackup
-          file: Containerfile
+          context: .
