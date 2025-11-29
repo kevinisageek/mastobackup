@@ -20,7 +20,7 @@ jobs:
         with:
           registry: ${{ env.REGISTRY }}
           username: ${{ forgejo.actor }}
-          password: ${{ secrets.FORGEJO_TOKEN }}
+          password: ${{ secrets.RUNNER_PAT }}
       - name: Extract metadata (tags, labels) for Docker
         id: meta
         uses: docker/metadata-action@c1e51972afc2121e065aed6d45c65596fe445f3f
