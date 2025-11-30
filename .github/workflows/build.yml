@@ -1,7 +1,4 @@
-name: Create and publish a Docker image
-
-# Configures this workflow to run every time a change is pushed to the branch called `main` and to run
-# every Monday at midnight to pick up any base image changes
+name: Publish container image
 on:
   push:
     branches: ['main']
@@ -42,10 +39,3 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
           push: true
           tags: ${{ steps.meta.outputs.tags }}
-      - name: Generate artifact attestation
-        uses: actions/attest-build-provenance@v3
-        with:
-          subject-name: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME}}
-          subject-digest: ${{ steps.push.outputs.digest }}
-          push-to-registry: true
-
