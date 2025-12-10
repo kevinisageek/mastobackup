@@ -18,7 +18,7 @@ RUN mkdir -p /backups /var/run/tailscale /var/cache/tailscale /var/lib/tailscale
 COPY entrypoint.sh entrypoint.sh
 
 # Set cronjob to run at midnight
-RUN echo '@daily ssh -o StrictHostKeyChecking=accept-new kevin@100.101.155.97 docker exec -t mastodon-db pg_dumpall -c -U postgres > /backups/mastodon-db-$(date +%Y-%m-%d).sql' > /etc/crontabs/root
+RUN echo '@daily ssh -o StrictHostKeyChecking=accept-new kevin@synology docker exec -t mastodon-db pg_dumpall -c -U postgres > /backups/mastodon-db-$(date +%Y-%m-%d).sql' > /etc/crontabs/root
 
 # Install packages without cache to save space
 RUN apk add --no-cache openssh-client
